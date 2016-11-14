@@ -1,0 +1,66 @@
+// Colors
+$black: #000000;
+$white: #FFFFFF;
+$red: #F00;
+$green: #0F0;
+$green: #00F;
+$dark-green: #0e6d4a;
+
+// Font 
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
+
+$arial: "arial";
+$sans: "sans-serif";
+$raleway: "Raleway", sans-serif;
+
+// Breakpoints
+$mobile-small: 480px;
+$mobile: 767px;
+$tablet: 768px;
+$tablet-vmax: 992px;
+$desktop: 1200px;
+$desktop-large: 1400px;
+
+// Partials
+@import "partials/_normalize";
+@import "partials/_variables";
+@import "partials/_typography";
+@import "partials/_functions";
+@import "partials/_mixins";
+@import "partials/_grid";
+
+// MODULES
+@import "modules/_alerts";
+@import "modules/_buttons";
+@import "modules/_forms";
+
+/* ------------------------------------------
+  COMPASS PLUGINS
+--------------------------------------------- */
+@import "susy";
+@import "compass";
+@import "compass/support";
+@import "compass/reset";
+@import "compass/utilities/general/clearfix";
+@import "compass/utilities/sprites";
+@import "compass/css3";
+@import "compass/typography/vertical_rhythm";
+@import "breakpoint";
+
+/* ------------------------------------------
+  SUSY SETTINGS
+--------------------------------------------- */
+@include establish-baseline;
+
+$susy: (columns: 12, gutters: 1 / 6, container: 1300px, math: fluid, output: float, global-box-sizing: border-box);
+
+$grid-layout-with-margin: (gutters: 1 / 6);
+
+$grid-layout-without-margin: (gutters: 0);
+
+$progress-counter-margin: (gutters: 6 / 6);
+
+$custom-margin-1: (gutters: 1.2 / 12);
+
+@include global-box-sizing(border-box);

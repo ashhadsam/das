@@ -1,0 +1,549 @@
+@import "_base";
+
+body {
+  background: $white;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+a {
+  font-family: $raleway;
+}
+
+.container {
+  @include container;
+
+  // padding: 0 (rhythm() / 1);
+
+  @include breakpoint($tablet) {
+    // padding: 0 (rhythm() / 1.5);
+  }
+}
+
+.header {
+  background: $white;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+
+  #inner-header {
+    a {
+      color: $black;
+      text-decoration: none;
+      font-size: 0.7em;
+      text-transform: uppercase;
+      float: none;
+      font-weight: 500;
+      margin: 0.5em 0;
+
+      @include breakpoint($tablet-vmax) {
+        float: left;
+        font-size: 1em;
+      }
+
+
+      &:hover {
+        color: $black;
+      }
+    }
+
+    img,
+    p#logo {
+      float: left;
+    }
+
+    img {
+      &.logo-img {
+        position: absolute;
+        width: 110px;
+      }
+    }
+
+    #logo {
+      padding-left: 115px;
+
+      @include breakpoint($mobile) {
+        padding-right: 60px;
+      }
+
+
+      a {
+        display: block;
+      }
+    }
+
+    nav {
+      display: none;
+      padding-left: 115px;
+      float: none;
+
+      @include breakpoint($tablet-vmax) {
+        display: block;
+        margin-right: 5em;
+        float: right;
+        padding-left: 0;
+      }
+
+
+      ul {
+        clear: both;
+
+        @include breakpoint($tablet-vmax) {
+          clear: none;
+        }
+      }
+
+      li {
+        margin: 1.5em 0em;
+        float: none;
+
+        @include breakpoint($tablet-vmax) {
+          margin: 0em 0.75em;
+          float: left;
+        }
+      }
+
+      .menu-item i.fa {
+        margin: 0 0.25em;
+      }
+    }
+
+    .collapser {
+      display: block;
+      position: absolute;
+      padding: 0.2em 0.6em;
+      margin-top: 0px;
+      right: 0px;
+
+      @include breakpoint($tablet-vmax) {
+        display: none;
+        margin-top: 2px;
+        right: 25px;
+      }
+
+
+      a {
+        margin: 0em 0em !important;
+      }
+    }
+  }
+}
+
+/* Homepage */
+.page-title, .byline.vcard {
+  display: none;
+}
+
+.full-slider-section.unslider-horizontal {
+  width: 100%;
+  margin: 0 auto;
+
+  @include breakpoint($tablet-vmax) {
+    width: 98%;
+  }
+
+
+  /* height: 559px; */
+  .slide-wrapper {
+    height: 960px;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .copy-wrapper {
+      position: absolute;
+      bottom: 0px;
+      margin: 0 0 2em 1em;
+      width: 80%;
+
+      @include breakpoint($tablet-vmax) {
+        margin: 0 0 2em 5em;
+        width: 33%;
+      }
+
+
+      .slide-title {
+        h2 {
+          font-size: 3em;
+          line-height: 1.4em;
+          text-transform: uppercase;
+          background: $dark-green;
+          font-weight: 800;
+          color: white;
+          display: inline;
+
+          @include breakpoint($tablet-vmax) {
+            font-size: 4em;
+          }
+        }
+      }
+
+      .slide-more-link {
+        a {
+          text-decoration: none;
+          margin: 2em 0;
+          float: left;
+          border: 3px solid $dark-green;
+          padding: 0.5em 1em;
+          border-radius: 35px;
+          color: $dark-green;
+          font-size: 1.2em;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+      }
+
+      .slide-copy p {
+        font-size: 1.2em;
+        font-weight: 500;
+      }
+    }
+
+    .effect {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+.unslider {
+  position: relative;
+  overflow: hidden;
+}
+
+.unslider-nav {
+  background-color: $dark-green;
+  width: 200px;
+  position: absolute;
+  right: 0px;
+  bottom: 20px;
+
+  @include breakpoint($mobile) {
+    bottom: 65px;
+  }
+
+
+  a {
+    color: $white;
+  }
+
+  li {
+    border-radius: 0px !important;
+    transform: rotate(45deg);
+  }
+}
+
+.meelad-section {
+  overflow: hidden;
+
+  .background-holder {
+    width: 90%;
+    float: left;
+    min-height: 920px;
+    width: 100%;
+
+    // background: #abffaf;
+    // background-image: url("http://localhost/wordpress/wp-content/themes/Das/library/images/meelad-full.jpg");
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-attachment: fixed;
+
+    @include breakpoint($tablet-vmax) {
+      height: 770px;
+    }
+  }
+
+  .copy-wrapper {
+    margin: auto;
+    margin-top: 4em;
+    margin-bottom: 4em;
+
+    @include breakpoint($tablet-vmax) {
+      margin-top: 7em;
+    }
+
+
+    @include breakpoint($mobile-small) {
+      width: 80%;
+    }
+
+
+    .mn-copy,
+    .mn-frame {
+      width: 100%;
+      float: none;
+      padding-top: 2em;
+      padding: 1em;
+      height: 400px;
+
+      @include breakpoint($mobile-small) {
+        padding: 3em;
+      }
+
+
+      @include breakpoint($tablet-vmax) {
+        width: 50%;
+        height: 580px;
+        float: left;
+      }
+    }
+
+    .mn-frame {
+      border: 20px solid $dark-green;
+
+      @include breakpoint($tablet-vmax) {
+        border-right: none;
+      }
+    }
+
+    .mn-copy {
+      background: $dark-green;
+      color: $white;
+      overflow: hidden;
+      height: auto;
+
+      @include breakpoint($tablet-vmax) {
+        height: 580px;
+      }
+
+
+      h2.mn-heading-1, .mn-heading-2 {
+        text-transform: uppercase;
+        font-size: 2em;
+        font-weight: 600;
+        line-height: 1em;
+
+        @include breakpoint($tablet-vmax) {
+          font-size: 2.5em;
+        }
+      }
+
+      .mn-heading-2 {
+        font-weight: 300;
+      }
+
+      hr {
+        margin: 1em 0;
+
+        @include breakpoint($tablet-vmax) {
+          font-size: 2em;
+        }
+      }
+
+      p {
+        font-size: 1em;
+
+        @include breakpoint($tablet-vmax) {
+          font-size: 1.25em;
+        }
+      }
+
+      .blog-link {
+        margin: 2em 0;
+        float: left;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: white;
+        color: $dark-green;
+        font-size: 1em;
+        font-weight: 600;
+        padding: 0.5em 1em;
+      }
+    }
+  }
+}
+
+.post-slider {
+  clear: both;
+
+  .slider-top-scroll {
+    .wrap-left {
+      width: 50%;
+      background: $dark-green;
+      color: $white;
+      padding: 0.5em 2.5em;
+
+      @include breakpoint($tablet-vmax) {
+        padding: 0.5em 5em;
+      }
+
+
+      & > p {
+        width: 30%;
+        display: inline-block;
+
+        @include breakpoint($tablet-vmax) {
+          width: 49%;
+        }
+      }
+
+      a, p {
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .main-post-slider {
+    .side-wrapper {
+      height: 550px;
+      background-position: center center;
+      background-size: cover;
+      position: relative;
+
+      // -webkit-transition: all 2s;
+      // transition: all 2s;
+
+      &:hover {
+        .copy-overlay {
+          height: 100%;
+          background: $dark-green;
+          -webkit-transition: all 1.25s;
+          transition: all 1.25s;
+          padding: 5em 0;
+
+          .title-extra {
+            display: block;
+            margin-top: 4em;
+
+            .post-date {
+              clear: both;
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .copy-overlay {
+        position: absolute;
+        bottom: 0px;
+        height: 100px;
+        width: 100%;
+        background: rgba(0, 80, 50, 0.73);
+
+        .title-wrapper,
+        .title-extra {
+          padding: 1.25em 4em;
+        }
+
+        .title-wrapper {
+          h2, h3 {
+            text-transform: uppercase;
+            color: white;
+            font-size: 2em;
+            line-height: 1em;
+            font-weight: 600;
+          }
+
+          h3 {
+            font-weight: 300;
+          }
+        }
+
+        .title-extra {
+          display: none;
+
+          .post-type {
+            a {
+              margin: 2em 0;
+              float: left;
+              text-transform: uppercase;
+              text-decoration: none;
+
+              /* background: transparent; */
+              color: #ffffff;
+              font-size: 1em;
+              font-weight: 600;
+              padding: 0.5em 1em;
+              border: 2px solid white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hadith-section {
+  text-align: center;
+  background: $white;
+  padding: 4em 0;
+
+  .wrapper {
+    width: 70%;
+  }
+
+  .title {
+    background: $dark-green;
+    display: inline-block;
+    color: white;
+    font-size: 3em;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 1em 0;
+  }
+
+  .hadith {
+    line-height: 1em;
+    margin-bottom: 1em;
+    font-size: 2em;
+
+    @include breakpoint($mobile) {
+      font-size: 3em;
+    }
+
+
+    @include breakpoint($tablet-vmax) {
+      font-size: 4em;
+    }
+  }
+
+  .source {
+    font-size: 2em;
+    font-weight: 500;
+    font-style: italic;
+  }
+}
+
+#inner-footer {
+  color: $white;
+  background: $dark-green;
+  text-align: center;
+  padding: 1.5em;
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 1em;
+}
+
+// Buttons
+.btn {
+  padding: 0.5em 2em;
+  margin-top: 1em;
+  float: left;
+
+  &.green {
+    color: #fff;
+    background-color: $dark-green;
+  }
+
+  &.btn.white {
+    color: $dark-green;
+    background-color: #fff;
+  }
+}
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+}
